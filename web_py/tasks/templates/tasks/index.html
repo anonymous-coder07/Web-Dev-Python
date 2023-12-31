@@ -1,0 +1,16 @@
+{% extends 'tasks/layout.html' %}
+{% load static %}
+{% block body %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <h1>Tasks</h1>
+    <div class="div">
+        <ul class="ul">
+        {% for i in tasks %}
+            <li> {{ i }} </li>
+        {% empty %}
+            <li>No Tasks</li>
+        {% endfor %}
+        </ul>
+    </div>
+    <a href="{% url 'tasks:add' %}">Add Tasks</a>
+{% endblock %}
